@@ -1,0 +1,92 @@
+/* =============================================================================
+   设计令牌 —— 对应设计文档 8.1「设计语言」
+   改这里等于改全站视觉，页面里不要再写死颜色。
+   ========================================================================== */
+
+:root {
+  /* 品牌色 */
+  --ap-color-primary: #2b6cf6;
+  --ap-color-primary-hover: #1f5ada;
+  --ap-color-primary-soft: rgba(43, 108, 246, 0.1);
+  --ap-color-primary-border: rgba(43, 108, 246, 0.28);
+
+  /* 语义色：通过绿 / 不通过红 / 待议橙 / 中性灰 */
+  --ap-color-pass: #16a34a;
+  --ap-color-pass-soft: rgba(22, 163, 74, 0.1);
+  --ap-color-reject: #dc2626;
+  --ap-color-reject-soft: rgba(220, 38, 38, 0.1);
+  --ap-color-review: #f59e0b;
+  --ap-color-review-soft: rgba(245, 158, 11, 0.12);
+  --ap-color-neutral: #6b7280;
+  --ap-color-neutral-soft: rgba(107, 114, 128, 0.1);
+  --ap-color-info: #0891b2;
+  --ap-color-info-soft: rgba(8, 145, 178, 0.1);
+
+  /* 背景与卡片 */
+  --ap-bg-page: #f5f7fa;
+  --ap-bg-card: #ffffff;
+  --ap-bg-subtle: #f9fafb;
+  --ap-bg-hover: #f3f5f9;
+  --ap-border: #e5e7eb;
+  --ap-border-strong: #d1d5db;
+
+  /* 文字 */
+  --ap-text-primary: #1f2937;
+  --ap-text-regular: #374151;
+  --ap-text-secondary: #6b7280;
+  --ap-text-placeholder: #9ca3af;
+  --ap-text-inverse: #ffffff;
+
+  /* 圆角 */
+  --ap-radius-sm: 4px;
+  --ap-radius-control: 6px;
+  --ap-radius-card: 8px;
+  --ap-radius-pill: 999px;
+
+  /* 阴影 */
+  --ap-shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --ap-shadow-raised: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --ap-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+  /* 间距（4px 基线） */
+  --ap-space-1: 4px;
+  --ap-space-2: 8px;
+  --ap-space-3: 12px;
+  --ap-space-4: 16px;
+  --ap-space-5: 20px;
+  --ap-space-6: 24px;
+  --ap-space-8: 32px;
+  --ap-space-10: 40px;
+
+  /* 字体 */
+  --ap-font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei',
+    'Helvetica Neue', Arial, sans-serif;
+  --ap-font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  --ap-font-size-body: 14px;
+  --ap-font-size-title: 16px;
+  --ap-font-size-heading: 20px;
+  --ap-font-size-aux: 12px;
+
+  /* 列表行高 */
+  --ap-row-height-compact: 40px;
+  --ap-row-height-normal: 48px;
+  --ap-row-height-loose: 56px;
+
+  /* 布局 */
+  --ap-sidebar-width: 208px;
+  --ap-sidebar-width-collapsed: 64px;
+  --ap-header-height: 56px;
+
+  /* 动效 */
+  --ap-transition: 160ms ease-out;
+
+  /* Element Plus 主题对齐 */
+  --el-color-primary: #2b6cf6;
+  --el-border-radius-base: 6px;
+  --el-font-size-base: 14px;
+  --el-text-color-primary: #1f2937;
+  --el-text-color-regular: #374151;
+  --el-border-color: #e5e7eb;
+  --el-border-color-light: #e5e7eb;
+  --el-fill-color-light: #f5f7fa;
+}

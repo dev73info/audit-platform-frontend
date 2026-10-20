@@ -1,0 +1,13 @@
+# pnpm 11 起，构建脚本白名单写在这里（package.json 的 pnpm 字段不再被读取）。
+# esbuild 需要执行安装脚本来落地平台二进制。
+allowBuilds:
+  esbuild: true
+
+supportedArchitectures:
+  os:
+    - win32
+    - linux
+  cpu:
+    - x64
+  libc:
+    - glibc
