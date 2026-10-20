@@ -28,23 +28,8 @@ export default defineConfig(({ mode }) => ({
         entryFileNames: 'assets/[name]-[hash].js',
         chunkFileNames: 'assets/[name]-[hash].js',
         assetFileNames: 'assets/[name]-[hash].[ext]',
-        manualChunks(id) {
-          // 分包要避免互相引用成环：只按 node_modules 下的真实包名归属，
-          // 不按路径里是否含 "vue" 判断（element-plus 内部路径也带 vue，会成环）。
-          if (id.includes('node_modules/pinia')) {
-            return 'pinia'
-          }
-          if (id.includes('node_modules/element-plus')) {
-            return 'element-plus'
-          }
-          if (id.includes('node_modules/vue/') || id.includes('node_modules/vue-router')) {
-            return 'vue-vendor'
-          }
-          if (id.includes('node_modules')) {
-            return 'vendor'
-          }
-          return 'app'
-        },
+        // 不做手工分包：按包名切会把 element-plus 与 vendor 互切成环
+        // （Vite 会告警 Circular chunk），交给 Rollup 默认策略更稳。
       },
     },
   },
