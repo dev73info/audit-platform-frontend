@@ -315,7 +315,7 @@ async function loadMembers() {
 
 async function loadAlerts() {
   try {
-    alerts.value = (await getAlerts()) ?? []
+    alerts.value = (await getAlerts())?.items ?? []
   } catch (err) {
     ElMessage.error(err instanceof ApiError ? err.message : '操作失败')
     alerts.value = []

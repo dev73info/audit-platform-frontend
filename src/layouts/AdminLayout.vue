@@ -1,7 +1,23 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue'
+import type { Component } from 'vue'
 import { RouterLink, RouterView, useRoute, useRouter } from 'vue-router'
 import { ElMessage, ElMessageBox } from 'element-plus'
+import {
+  ArrowDown,
+  Bell,
+  Connection,
+  Delete,
+  Document,
+  Expand,
+  Files,
+  Fold,
+  FolderOpened,
+  Odometer,
+  Stamp,
+  Tickets,
+  User,
+} from '@element-plus/icons-vue'
 
 import { useAuthStore } from '@/stores/auth'
 import { useNotificationStore } from '@/stores/notification'
@@ -21,6 +37,24 @@ interface MenuItem {
   title: string
   icon: string
   group: string
+}
+
+/**
+ * 侧边栏图标表。
+ *
+ * 路由 meta 里存的是图标名字符串，`<component :is="名字" />` 只有在组件
+ * 被注册过（这里显式登记，或全局注册）时才能渲染出来。
+ */
+const ICON_MAP: Record<string, Component> = {
+  Odometer,
+  FolderOpened,
+  Files,
+  Tickets,
+  Stamp,
+  Delete,
+  Document,
+  User,
+  Connection,
 }
 
 const menuItems = computed<MenuItem[]>(() => {
@@ -132,14 +166,14 @@ watch(
             :class="{ 'is-active': activeMenu === item.path }"
             :title="collapsed ? item.title : undefined"
           >
-            <el-icon><component :is="item.icon" /></el-icon>
+            <el-icon><component :is="ICON_MAP[item.icon]" /></el-icon>
             <span v-show="!collapsed" class="ap-shell__link-text">{{ item.title }}</span>
           </RouterLink>
         </div>
       </nav>
 
       <button class="ap-shell__collapse" type="button" @click="collapsed = !collapsed">
-        <el-icon><component :is="collapsed ? 'Expand' : 'Fold'" /></el-icon>
+        <el-icon><component :is="collapsed ? Expand : Fold" /></el-icon>
         <span v-show="!collapsed">收起侧栏</span>
       </button>
     </aside>

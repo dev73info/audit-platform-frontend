@@ -1,7 +1,7 @@
 /** 监控指标：总览、告警。 */
 
 import { get } from '@/api/http'
-import type { MetricsOverview } from '@/api/types'
+import type { MetricsOverview, PageResult } from '@/api/types'
 
 export type MetricsScope = 'global' | 'project' | 'audit'
 
@@ -24,6 +24,6 @@ export function getMetrics(params?: MetricsParams): Promise<MetricsOverview> {
 }
 
 /** 告警列表。 */
-export function getAlerts(params?: Record<string, unknown>): Promise<MetricsOverview['alerts']> {
-  return get<MetricsOverview['alerts']>('/api/admin/v1/metrics/alerts', params)
+export function getAlerts(params?: Record<string, unknown>): Promise<PageResult<MetricsOverview['alerts'][number]>> {
+  return get<PageResult<MetricsOverview['alerts'][number]>>('/api/admin/v1/metrics/alerts', params)
 }

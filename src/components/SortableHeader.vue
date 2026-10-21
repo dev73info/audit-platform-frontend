@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Bottom, InfoFilled, Sort, Top } from '@element-plus/icons-vue'
+
 /**
  * 可排序表头。
  *
