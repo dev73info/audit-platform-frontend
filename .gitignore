@@ -1,0 +1,19 @@
+# 依赖与构建产物
+node_modules/
+dist/
+.pnpm-store/
+
+# 本机配置
+.env.local
+.env.*.local
+
+# 自动生成类型声明
+auto-imports.d.ts
+components.d.ts
+
+# 本地产物
+*.log
+.DS_Store
+.idea/
+.vscode/
+.codegraph/
